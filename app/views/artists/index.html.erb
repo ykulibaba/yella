@@ -1,18 +1,14 @@
 <h1>Yella JOSE!</h1>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-3">
-      test
-    </div>
-    <div class="col-sm-3">
-      test
-    </div>
-    <div class="col-sm-3">
-      test
-    </div>
-    <div class="col-sm-3">
-      test
-    </div>
+  <% @artists.each do |artist| %>
+  <div>
+      Name: <%= artist.name %>
+      City: <%= artist.city %>
+      Description: <%= artist.description %>
+
+      <%= link_to 'Edit', edit_artist_path(artist) %>
+      <%= link_to 'Delete', artist_path(artist), method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
+  <% end %>
 </div>

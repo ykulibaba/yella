@@ -1,0 +1,30 @@
+<% if @artist.errors.any? %>
+  <div class="alert alert-danger">
+    <h2><%= pluralize(@artist.errors.count, "error") %> prevented this event from being saved:</h2>
+    <ul>
+    <% @artist.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for :artist, url: artist_path, method: "put" do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :value => @artist.name, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :city %>
+    <%= f.text_field :city, :value => @artist.city, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, :value => @artist.description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'Update', :class => 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', artists_path %>
