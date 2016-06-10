@@ -1,5 +1,8 @@
 <div class="container">
   <ul>
+    <li><%= image_tag @artist.avatar.url %></li>
+    <li><%= image_tag @artist.avatar.url(:medium) %></li>
+    <li><%= image_tag @artist.avatar.url(:thumb) %></li>
     <li>Name: <%= @artist.name %></li>
     <li>City: <%= @artist.city %></li>
     <li>Description: <%= @artist.description %></li>
