@@ -15,7 +15,7 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
-      redirect_to @artist, notice: 'Pin was successfully created.'
+      redirect_to @artist, notice: 'Artist was successfully created.'
     else
       render :new 
     end
@@ -29,7 +29,7 @@ class ArtistsController < ApplicationController
   def update
     @artist = Artist.find(params[:id])
     if @artist.update(artist_params)
-      redirect_to @artist, notice: 'Pin was successfully created.'
+      redirect_to @artist, notice: 'Artist was successfully created.'
     else
       render :new 
     end
