@@ -1,22 +1,7 @@
 <div class="jumbotron center">
   <h1>Welcome to Yella.</h1>
-  
-  <% if user_signed_in? %>
-  # Welcome! you are now signed in :)
-  <% else %>
-  <p>
-
-  </p>
+    <% if user_signed_in? %>
+    # Welcome! you are now signed in :)
+    <% else %>
   <% end %>
 </div>
-
-<% unless user_signed_in? %>
-  <div id="card"> 
-    <div class="front">
-      <%= render "/devise/sessions/new"%>
-    </div> 
-    <div class="back">
-      <%= render "/devise/registrations/new"%>
-    </div> 
-  </div>
-<% end %>
