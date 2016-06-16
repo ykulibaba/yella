@@ -27,6 +27,7 @@
   <% end %>
 </div>
   <div class="panel-footer">
-    <%= render "devise/shared/links" %>
+    <a id="new-user">New User?</a><br>
+    <%= link_to "Forgot your password?", new_password_path(resource_name) %>
   </div>
 </div>
