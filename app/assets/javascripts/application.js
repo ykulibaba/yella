@@ -15,3 +15,10 @@
 //= require bootstrap-sprockets
 //= require flip
 //= require_tree .
+
+$(document).ready(function() {
+    // show the alert
+    setTimeout(function() {
+        $(".alert").alert('close');
+    }, 2000);
+});

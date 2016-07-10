@@ -1,14 +1,13 @@
-<h1>Yella JOSE!</h1>
-
 <div class="container">
   <% @artists.each do |artist| %>
-  <div>
-      Name: <%= artist.name %>
-      City: <%= artist.city %>
-      Description: <%= artist.description %>
-
-      <%= link_to 'Edit', edit_artist_path(artist) %>
-      <%= link_to 'Delete', artist_path(artist), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
+    <div class="artist col-lg-2 col-sm-3 col-xs-4">
+      <a href="<%= artist_path(artist) %>">
+        <img src="<%= artist.avatar.url(:medium) %>" class="thumbnail img-responsive">
+      </a>
+      <p><%= artist.name %></p>
+      <p><%= artist.city %></p>
+      <% link_to 'Edit', edit_artist_path(artist) %>
+      <% link_to 'Delete', artist_path(artist), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div> 
   <% end %>
 </div>
